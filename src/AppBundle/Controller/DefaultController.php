@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -18,7 +19,14 @@ class DefaultController extends Controller
 
         $message = 'Welcome to slack-app';
 
-        $response->setContent(json_encode(array('success' => true, 'message' => $message)));
+
+        $responseData = [
+            'response_type' => 'in_channel',
+            'text' =>  'Hello to this channel!'
+        ];
+
+        $response->setStatusCode(Response::HTTP_OK);
+        $response->setContent(json_encode($responseData));
 
         return $response;
     }
