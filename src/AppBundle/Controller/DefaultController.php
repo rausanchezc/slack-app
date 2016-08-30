@@ -21,7 +21,7 @@ class DefaultController extends Controller
 
 
         $responseData = [
-            'response_type' => 'in_channel',
+            'response_type' => 'ephemeral',
             'text' =>  'Hello to this channel!'
         ];
 
