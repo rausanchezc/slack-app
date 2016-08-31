@@ -27,7 +27,6 @@ class DefaultController extends Controller
 
         $responseData = [
             'response_type' => 'ephemeral',
-            'text' =>  'Hello to this channel!',
             'attachments' => json_encode($attachments)
         ];
 
