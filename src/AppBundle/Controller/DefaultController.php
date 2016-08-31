@@ -18,11 +18,14 @@ class DefaultController extends Controller
         $response = new JsonResponse();
 
         $message = 'Welcome to slack-app';
-
+        $attachments = [
+            'text' => 'I attached my saludation!'
+        ];
 
         $responseData = [
             'response_type' => 'ephemeral',
-            'text' =>  'Hello to this channel!'
+            'text' =>  'Hello to this channel!',
+            'attachments' => json_encode($attachments)
         ];
 
         $response->setStatusCode(Response::HTTP_OK);
