@@ -20,6 +20,7 @@ class DefaultController extends Controller
         $message = 'Welcome to slack-app';
         $attachments = [
             [
+                'fallback' => '',
                 'text' => 'I attached my saludation!'
             ]
         ];
