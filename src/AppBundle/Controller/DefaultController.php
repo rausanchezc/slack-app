@@ -17,18 +17,18 @@ class DefaultController extends Controller
     {
         $response = new JsonResponse();
 
-        $attachment = json_encode([
-            'fallback' => '',
-            'text' => 'I attached my saludation!'
-        ]);
-
-        $message = 'Welcome to slack-app';
         $attachments = [
-            $attachment
+            [
+                'fallback' => '',
+                'title' => 'Title',
+                'title_link' => 'http://www.trivago.com',
+                'text' => 'Attachment message'
+            ]
         ];
 
         $responseData = [
             'response_type' => 'ephemeral',
+            'text' => 'I\'m saying hello!',
             'attachments' => [json_encode($attachments)]
         ];
 
