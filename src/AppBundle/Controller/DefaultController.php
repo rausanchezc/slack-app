@@ -19,15 +19,13 @@ class DefaultController extends Controller
 
         $message = 'Welcome to slack-app';
         $attachments = [
-            [
                 'fallback' => '',
                 'text' => 'I attached my saludation!'
-            ]
         ];
 
         $responseData = [
             'response_type' => 'ephemeral',
-            'attachments' => json_encode($attachments)
+            'attachments' => [json_encode($attachments)]
         ];
 
         $response->setStatusCode(Response::HTTP_OK);
