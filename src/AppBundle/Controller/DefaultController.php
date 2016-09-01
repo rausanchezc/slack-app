@@ -17,10 +17,14 @@ class DefaultController extends Controller
     {
         $response = new JsonResponse();
 
+        $attachment = json_encode([
+            'fallback' => '',
+            'text' => 'I attached my saludation!'
+        ]);
+
         $message = 'Welcome to slack-app';
         $attachments = [
-                'fallback' => '',
-                'text' => 'I attached my saludation!'
+            $attachment
         ];
 
         $responseData = [
